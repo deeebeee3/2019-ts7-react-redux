@@ -5,9 +5,24 @@ interface AppProps {
   color?: string
 }
 
-class App extends React.Component<AppProps>{
+interface AppState {
+  counter: number
+}
 
-  state = { counter: 0 };
+class App extends React.Component<AppProps, AppState>{
+
+  //overriding state in React.Component - S = {}
+  //this method is better than the constructor method for initializing the state object
+  //state = { counter: 0 }; 
+
+  constructor(props: AppProps) {
+    super(props)
+
+    //state: Readonly<S> is an empty object in React.Component
+    //interface Component<P = {}, S = {}, SS = any>
+    this.state = { counter: 0 };
+  }
+
 
   onIncrement = (): void => {
     this.setState({ counter: this.state.counter + 1 });
