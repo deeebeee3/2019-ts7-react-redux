@@ -3,7 +3,7 @@ import { todosReducer } from './todos';
 import { Todo } from '../actions';
 
 export interface StoreState {
-  todos: Todo[];
+  todos: Todo[]; //an array of Todos
 }
 
 
@@ -12,3 +12,9 @@ export const reducers = combineReducers<StoreState>({
   //counter: () => 1
   todos: todosReducer
 });
+
+
+//Our store state is going to look like this:
+// {
+//   todos: [Todo, Todo, Todo]
+// }
