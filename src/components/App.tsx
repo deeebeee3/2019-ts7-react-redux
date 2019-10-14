@@ -5,8 +5,9 @@ import { StoreState } from '../reducers';
 
 interface AppProps {
   todos: Todo[];
-  fetchTodos: typeof fetchTodos;
-  deleteTodos: typeof deleteTodo;
+  //fetchTodos: typeof fetchTodos;
+  fetchTodos: Function;
+  deleteTodo: typeof deleteTodo;
 }
 
 class _App extends React.Component<AppProps> {
@@ -16,7 +17,7 @@ class _App extends React.Component<AppProps> {
   };
 
   onTodoClick = (id: number): void => {
-    this.props.deleteTodos(id);
+    this.props.deleteTodo(id);
   }
 
   renderList(): JSX.Element[] {
