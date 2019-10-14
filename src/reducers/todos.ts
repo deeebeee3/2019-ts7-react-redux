@@ -1,9 +1,9 @@
-import { Todo, FetchTodosAction, ActionTypes } from '../actions'
+import { Todo, Action, ActionTypes } from '../actions'
 
 //state is going to be an array of Todos, if we don't provide a state then use an empty array
 export const todosReducer = (
   state: Todo[] = [],
-  action: FetchTodosAction
+  action: Action
 ) => {
   switch (action.type) {
     case ActionTypes.fetchTodos:
